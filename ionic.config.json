@@ -1,0 +1,7 @@
+{
+  "name": "adopta-condrins",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
