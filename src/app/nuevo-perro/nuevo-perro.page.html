@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar style="--background: orange;">
+    <ion-title>Nuevo Perrito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-input label="Nombre" labelPlacements="stacked" [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Edad (años)" labelPlacement="stacked" type="number" [(ngModel)]="edad"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Raza" labelPlacement="stacked" [(ngModel)]="raza"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Descripcion" labelPlacement="stacked" [(ngModel)]="descripcion"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Foto (ruta en assets)" labelPlacement="stacked" [(ngModel)]="foto"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="guardar()">Guardar</ion-button>
+</ion-content>
+

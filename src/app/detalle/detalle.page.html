@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ perro?.nombre ?? 'Perro no encontrado' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  @if (perro) {
+    <img [src]="perro.foto" [alt]="perro.nombre" 
+      style="display: block; margin: 0 auto; max-width: 100%; max-height: 400px; border-radius: 16px;" />
+
+    <h1>{{ perro.nombre }}</h1>
+    <p><strong>Raza:</strong> {{ perro.raza }}</p>
+    <p><strong>Edad:</strong> {{ perro.edad }} años</p>
+    <p><strong>Estado:</strong> {{ perro.adoptado ? 'Adoptado' : 'Disponible' }}</p>
+    <p>{{ perro.descripcion }}</p>
+
+    @if (!perro.adoptado) {
+      <ion-button expand="block" color="success" (click)="marcarAdoptado()">Marcar como adoptado</ion-button>
+    }
+
+    <ion-button expand="block" (click)="irAEditar()">Editar</ion-button>
+    <ion-button expand="block" color="danger" (click)="confirmarEliminar()">Eliminar</ion-button>
+  } @else {
+    <p>No se encontró ese perro.</p>
+  }
+</ion-content>
